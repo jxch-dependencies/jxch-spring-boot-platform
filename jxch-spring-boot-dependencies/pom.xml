@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>io.github.jxch</groupId>
+        <artifactId>jxch-spring-boot-platform</artifactId>
+        <version>${revision}</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>jxch-spring-boot-dependencies</artifactId>
+    <packaging>pom</packaging>
+
+    <name>jxch-spring-boot-dependencies</name>
+    <description>Dependency management BOM for jxch Spring Boot projects.</description>
+    <url>https://github.com/jxch-dependencies/jxch-spring-boot-platform</url>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.github.jxch</groupId>
+                <artifactId>soybean-keycloak-reactive-support-spring-starter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
