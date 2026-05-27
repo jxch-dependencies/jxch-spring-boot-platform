@@ -24,6 +24,11 @@
                 <artifactId>soybean-keycloak-reactive-support-spring-starter</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>io.github.jxch</groupId>
+                <artifactId>oracle-cloud-object-storage-s3-spring-starter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

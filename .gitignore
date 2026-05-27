@@ -2,6 +2,7 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+!**/.flattened-pom.xml
 .kotlin
 
 ### IntelliJ IDEA ###
@@ -12,6 +13,7 @@ target/
 *.iws
 *.iml
 *.ipr
+.flattened-pom.xml
 
 ### Eclipse ###
 .apt_generated
