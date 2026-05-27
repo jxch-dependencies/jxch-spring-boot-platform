@@ -1,0 +1,70 @@
+server:
+  port: 18080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+
+spring:
+  frp:
+    client:
+      enabled: true
+      binary: /opt/frp/frpc
+      work-dir: /opt/frp/client
+      config-file: /opt/frp/client/frpc.toml
+
+      server-addr: 10.10.10.20
+      server-port: 7000
+
+      auth:
+        method: token
+        token: your-token-here
+
+      web-server:
+        enabled: true
+        addr: 127.0.0.1
+        port: 17400
+        username: admin
+        password: changeit
+
+      process:
+        auto-start: true
+        verify-before-start: true
+        verify-before-reload: true
+        shutdown-timeout: 10s
+        status-timeout: 3s
+
+      reconcile:
+        startup-reconcile: true
+        rollback-on-failure: true
+        reload-wait: 10s
+
+      management:
+        rest-enabled: true
+        base-path: /internal/frp/client
+
+      security:
+        enabled: true
+        username: frpadmin
+        password: frpadmin-change-me
+        role: FRP_ADMIN
+
+      proxies:
+        - name: app-8080
+          type: tcp
+          local-ip: 127.0.0.1
+          local-port: 8080
+          remote-port: 18080
+          enabled: true
+          annotations:
+            owner: demo
+            env: prod
+
+        - name: ssh-22
+          type: tcp
+          local-ip: 127.0.0.1
+          local-port: 22
+          remote-port: 10022
+          enabled: true

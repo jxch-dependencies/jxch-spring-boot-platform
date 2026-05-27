@@ -1,0 +1,27 @@
+spring:
+  oracle:
+    cloud:
+      oci:
+        s3:
+          enabled: true
+          namespace: axxxxxxxxxxx
+          region: us-ashburn-1
+          access-key: your-access-key
+          secret-key: your-secret-key
+          default-bucket: your-bucket
+          path-style-access: true
+          chunked-encoding-enabled: false
+          checksum-validation-enabled: false
+          health-enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: always
+  health:
+    ociS3:
+      enabled: true
