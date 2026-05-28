@@ -27,7 +27,7 @@
     </parent>
 
     <properties>
-        <revision.release>0.1.7</revision.release>
+        <revision.release>0.1.8</revision.release>
         <revision.snapshot>1.0.0-SNAPSHOT</revision.snapshot>
         <revision>${revision.snapshot}</revision>
 
