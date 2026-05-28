@@ -1,14 +1,21 @@
+---
+spring:
+  config:
+    import:
+      - optional:classpath:app.env[.properties]
+---
+
 spring:
   oracle:
     cloud:
       oci:
         s3:
           enabled: true
-          namespace: axxxxxxxxxxx
-          region: us-ashburn-1
-          access-key: your-access-key
-          secret-key: your-secret-key
-          default-bucket: your-bucket
+          namespace: ${OCI_S3_NAMESPACE}
+          region: ${OCI_S3_REGION}
+          access-key: ${OCI_S3_ACCESS_KEY}
+          secret-key: ${OCI_S3_SECRET_KEY}
+          default-bucket: ${OCI_S3_DEFAULT_BUCKET}
           path-style-access: true
           chunked-encoding-enabled: false
           checksum-validation-enabled: false
