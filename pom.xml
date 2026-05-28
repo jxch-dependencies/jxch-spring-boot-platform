@@ -27,6 +27,7 @@
     </parent>
 
     <properties>
+        <revision.release>0.1.5</revision.release>
         <revision>1.0.0-SNAPSHOT</revision>
 
         <java.version>25</java.version>
@@ -148,7 +149,7 @@
         <profile>
             <id>central</id>
             <properties>
-                <revision>0.1.4</revision>
+                <revision>${revision.release}</revision>
             </properties>
 
             <build>
